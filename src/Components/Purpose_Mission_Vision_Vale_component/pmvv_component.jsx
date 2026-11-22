@@ -17,13 +17,11 @@ function PurposeMissionVisionValue(){
                 Purpose
             </h3>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-                mollit anim id est laborum
+                <p>
+                    Seeking an internship to gain practical work experience and develop professional skills. 
+                    With Passion to Work in Japan, Strong education , flexibility and a willingness to apply and 
+                    learn any skills related to System Analysis.
+                </p>
             </p>
             <div>
                 {card_component_list}

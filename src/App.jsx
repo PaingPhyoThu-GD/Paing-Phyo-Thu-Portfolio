@@ -7,33 +7,34 @@ import PurposeMissionVisionValue from './Components/Purpose_Mission_Vision_Vale_
 import ProjectShowCaesSection from './Components/Project_component/project_show_case_section'
 import TechStack from './Components/Tech_stack_component/tech_stack_section'
 import Footer from './Components/Footer/footer.'
+import AIHeroSection from './Components/Hero_component/ai_hero_section_component'
 
 
 function App() {
 
-  const [ishome , setishome] = useState(true)
+  const [ishome, setishome] = useState(true)
 
 
   return (
     <>
-      
-      <Navbar ishome = {setishome}/>
-      <p>IS home : {ishome? (<>True</>): (<>False</>)}</p>
+
+      <Navbar ishome={setishome} />
+      <p>IS home : {ishome ? (<>True</>) : (<>False</>)}</p>
       {
-        ishome ? 
-        (
-          <>
-            <Hero/>
-            <PurposeMissionVisionValue/>
-            <ProjectShowCaesSection ishome = {setishome}/>
-            <TechStack/>
-          </>
-        ):
-        (<>
-        </>)
+        ishome ?
+          (
+            <>
+              <AIHeroSection />
+              <PurposeMissionVisionValue />
+              <ProjectShowCaesSection ishome={setishome} />
+              <TechStack />
+            </>
+          ) :
+          (<>
+          </>)
 
       }
-      <Footer/>
+      <Footer />
     </>
   )
 }

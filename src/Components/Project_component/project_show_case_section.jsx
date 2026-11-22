@@ -16,7 +16,7 @@ function ProjectShowCaesSection(){
     //const temp_pj_nav_list = project_list.map( (pj) => <Project project={pj}></Project>)
     
     return(
-
+        
         <>
             <section>
                 <h3>

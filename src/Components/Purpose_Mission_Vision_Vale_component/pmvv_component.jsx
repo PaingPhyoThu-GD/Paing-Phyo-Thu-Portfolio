@@ -1,5 +1,4 @@
-import Card from "../Card_component/card_component"
-
+import Card from "../Card_component/card_component";
 
 
 function PurposeMissionVisionValue(){

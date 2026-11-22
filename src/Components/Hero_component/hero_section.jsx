@@ -6,7 +6,7 @@ function Hero() {
         <>
         
             <section>
-                <img src="src\assets\Profile_image-removebg-preview.png" alt=" Profle Image "></img>
+                <img src="Paing-Phyo-Thu-Portfolio/src/assets/Profile_image-removebg-preview.png" alt=" Profle Image "></img>
                 <div>
                     <h3>
                         Paing Phyo Thu

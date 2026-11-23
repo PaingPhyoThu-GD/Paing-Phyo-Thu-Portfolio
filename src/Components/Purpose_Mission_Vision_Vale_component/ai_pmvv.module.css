@@ -1,0 +1,254 @@
+/* ai_pmvv.module.css */
+
+
+
+
+
+.sectionContainer {
+  --deep-space-blue: #003049;
+  --flag-red: #d62828;
+  --vivid-tangerine: #f77f00;
+  --sunflower-gold: #fcbf49;
+  --vanilla-custard: #eae2b7;
+  --neutral-bg: #f9f8f4;
+  --text-dark: #003049;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0rem auto;
+  margin-top: 1.5rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+}
+
+
+/* =========================================
+   TOP BANNER: PURPOSE (Deep Space Blue)
+   ========================================= */
+.purposeBanner {
+  position: relative;
+  background-color: var(--deep-space-blue);
+  color: #ffffff;
+  border-radius: 12px 12px 4px 4px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 12px 28px rgba(0, 48, 73, 0.18);
+  display: flex;
+  align-items: center;
+  min-height: 160px;
+}
+
+.purposeContent {
+  position: relative;
+  z-index: 2;
+  padding: 2.25rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.purposeTitle {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+  color: #ffffff;
+  flex-shrink: 0;
+  border-right: 3px solid var(--sunflower-gold);
+  padding-right: 2.5rem;
+}
+
+.purposeText {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+  max-width: 780px;
+  font-weight: 400;
+}
+
+/* =========================================
+   3-BLOCK MOSAIC GRID (MVV)
+   ========================================= */
+.mvvGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 540px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  border-radius: 4px 4px 12px 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base Card Styling */
+.cardBlock {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Content layer above mosaic */
+.cardContent {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem 3rem;
+}
+
+.cardTitle {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+  line-height: 1.05;
+}
+
+.cardText {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 480px;
+}
+
+/* =========================================
+   CARD THEMES
+   ========================================= */
+
+/* 1. MISSION (Flag Red) */
+.missionBlock {
+  background-color: var(--flag-red);
+  color: var(--deep-space-blue);
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.missionBlock .cardTitle {
+  color: white;
+  ;
+}
+
+.missionBlock .cardText {
+  color: white;
+}
+
+/* 2. VISION (Vivid Tangerine / Sunflower Gold) */
+.visionBlock {
+  background-color: white;
+  ;
+  color: #ffffff;
+  flex: 1;
+}
+
+.visionBlock .cardTitle {
+  color: white;
+  ;
+}
+
+.visionBlock .cardText {
+  color: var(--deep-space-blue));
+}
+
+/* 3. CORE VALUES (Vanilla Custard / Soft light neutral) */
+.coreValuesBlock {
+  background-color: var(--vanilla-custard);
+  color: var(--deep-space-blue);
+  border-left: 1px solid rgba(0, 48, 73, 0.08);
+}
+
+.coreValuesBlock .cardTitle {
+  color: var(--deep-space-blue);
+  line-height: 0.95;
+}
+
+.coreValuesBlock .cardTitle span {
+  display: block;
+}
+
+.coreValuesBlock .cardText {
+  color: #1a3c54;
+}
+
+.valuesList {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.valuesItem {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: #1a3c54;
+}
+
+.valuesItem::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.75rem;
+  color: var(--deep-space-blue);
+}
+
+/* =========================================
+   MOSAIC / PIXEL PATTERNS (SVG Backgrounds)
+   ========================================= */
+.mosaicSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 960px) {
+  .purposeContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
+  }
+
+  .purposeTitle {
+    border-right: none;
+    border-bottom: 3px solid var(--sunflower-gold);
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  .mvvGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .coreValuesBlock {
+    border-left: none;
+    border-top: 1px solid rgba(0, 48, 73, 0.08);
+  }
+
+  .cardContent {
+    padding: 2rem;
+  }
+}

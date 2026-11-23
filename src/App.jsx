@@ -1,14 +1,12 @@
 import { useState } from 'react'
 
 import './App.css'
-import Navbar from './Components/nav_bar_component/nav_bar_section'
-import Hero from './Components/Hero_component/hero_section'
-import PurposeMissionVisionValue from './Components/Purpose_Mission_Vision_Vale_component/pmvv_component'
-import ProjectShowCaesSection from './Components/Project_component/project_show_case_section'
-import TechStack from './Components/Tech_stack_component/tech_stack_section'
-import Footer from './Components/Footer/footer.'
-import AIHeroSection from './Components/Hero_component/ai_hero_section_component'
 
+import AIHeroSection from './Components/Hero_component/ai_hero_section_component'
+import AIPMVVComponent from './Components/Purpose_Mission_Vision_Vale_component/ai_pmvv_component'
+import AITechStackSection from './Components/Tech_stack_component/ai_tech_stack_sec'
+import AIFooterComponent from './Components/Footer/ai_footer_component'
+import AINavbar from './Components/nav_bar_component/ai_nav_bar_section'
 
 function App() {
 
@@ -17,26 +15,36 @@ function App() {
 
   return (
     <>
+      <div className='app'>
+        <AINavbar ishome={setishome} />
 
-      <Navbar ishome={setishome} />
-      <p>IS home : {ishome ? (<>True</>) : (<>False</>)}</p>
-      {
-        ishome ?
-          (
-            <>
-              <AIHeroSection />
-              <PurposeMissionVisionValue />
-              <ProjectShowCaesSection ishome={setishome} />
-              <TechStack />
-            </>
-          ) :
-          (<>
-          </>)
+        {
+          ishome ?
+            (
+              <>
+                <AIHeroSection />
+                <AIPMVVComponent />
 
-      }
-      <Footer />
+                <AITechStackSection />
+              </>
+            ) :
+            (<>
+            </>)
+
+        }
+
+        <AIFooterComponent />
+      </div>
     </>
   )
 }
-
+//<p>IS home : {ishome ? (<>True</>) : (<>False</>)}</p>
+//<Navbar ishome={setishome} />
+//<ProjectShowCaesSection ishome={setishome} />
+// import Navbar from './Components/nav_bar_component/nav_bar_section'
+// import Hero from './Components/Hero_component/hero_section'
+// import PurposeMissionVisionValue from './Components/Purpose_Mission_Vision_Vale_component/pmvv_component'
+// import ProjectShowCaesSection from './Components/Project_component/project_show_case_section'
+// import TechStack from './Components/Tech_stack_component/tech_stack_section'
+// import Footer from './Components/Footer/footer.'
 export default App

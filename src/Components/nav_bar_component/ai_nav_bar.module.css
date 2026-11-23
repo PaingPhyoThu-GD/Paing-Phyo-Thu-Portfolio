@@ -1,0 +1,106 @@
+/* ai_nav_bar.module.css */
+
+.navWrapper {
+  --deep-space-blue: #003049;
+  --flag-red: #d62828;
+  --vivid-tangerine: #f77f00;
+  --sunflower-gold: #fcbf49;
+  --vanilla-custard: #eae2b7;
+
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: max-content;
+  max-width: calc(100vw - 2rem);
+  box-sizing: border-box;
+}
+
+/* Outer Pill Container (matching the reference image frame) */
+.pillContainer {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 2px solid var(--deep-space-blue);
+  border-radius: 9999px;
+  padding: 5px 6px;
+  box-shadow: 0 10px 32px rgba(0, 48, 73, 0.14);
+  list-style: none;
+  margin: 0;
+  box-sizing: border-box;
+  gap: 4px;
+}
+
+.navItem {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav Item Button */
+.navButton {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--deep-space-blue);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navButton:hover:not(.activeBtn) {
+  color: var(--vivid-tangerine);
+  background-color: rgba(247, 127, 0, 0.08);
+}
+
+/* Active Inner Pill (matches the solid black inner pill from reference, using Deep Space Blue) */
+.activeBtn {
+  background-color: var(--deep-space-blue);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 48, 73, 0.28);
+}
+
+.activeBtn:hover {
+  background-color: var(--deep-space-blue);
+  color: #ffffff;
+}
+
+/* Mobile responsive scrollable pill */
+@media (max-width: 720px) {
+  .navWrapper {
+    top: 1rem;
+    max-width: calc(100vw - 1.5rem);
+  }
+
+  .pillContainer {
+    overflow-x: auto;
+    padding: 4px 5px;
+    gap: 2px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .pillContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navButton {
+    padding: 6px 12px;
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+  }
+}

@@ -148,18 +148,16 @@
 /* 2. VISION (Vivid Tangerine / Sunflower Gold) */
 .visionBlock {
   background-color: white;
-  ;
   color: #ffffff;
   flex: 1;
 }
 
 .visionBlock .cardTitle {
   color: white;
-  ;
 }
 
 .visionBlock .cardText {
-  color: var(--deep-space-blue));
+  color: var(--deep-space-blue);
 }
 
 /* 3. CORE VALUES (Vanilla Custard / Soft light neutral) */

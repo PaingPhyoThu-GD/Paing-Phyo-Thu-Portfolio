@@ -8,6 +8,8 @@ import AITechStackSection from './Components/Tech_stack_component/ai_tech_stack_
 import AIFooterComponent from './Components/Footer/ai_footer_component'
 import AINavbar from './Components/nav_bar_component/ai_nav_bar_section'
 import ProjectShowCaesSection from './Components/Project_component/project_show_case_section'
+import AIProjectShowcaseSection from './Components/Project_component/ai_project_showcase_section'
+import AIProjectShowcaseV2 from './Components/Project_component/ai_project_showcase_v2'
 
 function App() {
 
@@ -25,8 +27,10 @@ function App() {
               <>
                 <AIHeroSection />
                 <AIPMVVComponent />
-                <ProjectShowCaesSection />
+
+                <AIProjectShowcaseV2 />
                 <AITechStackSection />
+
               </>
             ) :
             (<>

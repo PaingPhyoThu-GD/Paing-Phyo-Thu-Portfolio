@@ -1,0 +1,372 @@
+/* ai_project_showcase.module.css */
+
+.showcaseSection {
+  --deep-space-blue: #003049;
+  --flag-red: #d62828;
+  --vivid-tangerine: #f77f00;
+  --sunflower-gold: #fcbf49;
+  --vanilla-custard: #eae2b7;
+  --bg-frame: #f8f6f0;
+  --card-border: rgba(0, 48, 73, 0.12);
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 4.5rem auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 1. Top Tab / Header Bar (matching top rect in Frame 2.svg) */
+.headerTabRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.topPillTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1.6rem;
+  background-color: var(--deep-space-blue);
+  color: #ffffff;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 48, 73, 0.2);
+}
+
+.tabDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--vivid-tangerine);
+}
+
+.tabTitle {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* 2. Main Showcase Frame (the outer rounded box from Frame 2.svg) */
+.mainShowcaseFrame {
+  position: relative;
+  background: var(--bg-frame);
+  border: 2px solid var(--deep-space-blue);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 48, 73, 0.12);
+  min-height: 520px;
+  display: flex;
+  box-sizing: border-box;
+}
+
+/* Left Zone: The Rotating Arc Wheel Roster (the brown ellipse from Frame 2.svg) */
+.dialZone {
+  position: relative;
+  flex: 0 0 380px;
+  min-height: 520px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #002235, var(--deep-space-blue));
+  display: flex;
+  align-items: center;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+/* Visual Dial Hub / Wheel Track */
+.dialWheelTrack {
+  position: absolute;
+  left: -120px;
+  top: 50%;
+  width: 440px;
+  height: 440px;
+  margin-top: -220px;
+  border-radius: 50%;
+  border: 2px dashed rgba(234, 226, 183, 0.25);
+  background: radial-gradient(circle, rgba(0, 48, 73, 0.4) 0%, rgba(0, 24, 38, 0.95) 70%);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 48, 73, 0.35);
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Inner hub center */
+.dialCenterHub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--vivid-tangerine) 0%, var(--deep-space-blue) 80%);
+  border: 3px solid var(--sunflower-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hubText {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Individual Project Orbit Button on the Wheel */
+.orbitItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 170px;
+  height: 46px;
+  margin-top: -23px;
+  margin-left: -85px;
+  transform-origin: center center;
+  pointer-events: auto;
+}
+
+.orbitButton {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(234, 226, 183, 0.3);
+  border-radius: 24px;
+  background: rgba(0, 36, 56, 0.88);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: capitalize;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.orbitButton:hover:not(.activeOrbitButton) {
+  border-color: var(--sunflower-gold);
+  background: rgba(247, 127, 0, 0.25);
+  transform: scale(1.05);
+}
+
+.activeOrbitButton {
+  background: var(--vivid-tangerine);
+  border-color: var(--sunflower-gold);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(247, 127, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.08);
+}
+
+/* Active Pointer Arrow on the Right Edge of Dial */
+.activePointer {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 14px solid var(--vivid-tangerine);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Right Zone: Hero Image Area (the purple rect in Frame 2.svg) */
+.heroZone {
+  flex: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Project Info Header above Image */
+.projectInfoHeader {
+  margin-bottom: 1.5rem;
+}
+
+.projectName {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--deep-space-blue);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.projectRoleBadge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--flag-red);
+  background: rgba(214, 40, 40, 0.08);
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.projectDescription {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #556270;
+  margin: 0;
+  max-width: 650px;
+}
+
+/* Hero Image Screen Container */
+.heroImageContainer {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #f3f5f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 48, 73, 0.08);
+  border: 1px solid rgba(0, 48, 73, 0.1);
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Clean Placeholder Layout (when no image file provided yet) */
+.placeholderBox {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  border: 2px dashed rgba(0, 48, 73, 0.28);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(234, 226, 183, 0.25) 0%, rgba(255, 255, 255, 0.95) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Decorative X watermark lines */
+.placeholderWatermarkX {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.08;
+}
+
+.placeholderIconWrapper {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: var(--deep-space-blue);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 48, 73, 0.2);
+  z-index: 2;
+}
+
+.placeholderCameraIcon {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.placeholderLabel {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--deep-space-blue);
+  margin: 0 0 0.4rem 0;
+  z-index: 2;
+}
+
+.placeholderHint {
+  font-size: 0.82rem;
+  color: #708090;
+  margin: 0;
+  z-index: 2;
+}
+
+/* Tech Stack Badges Row below the image */
+.techBadgeRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.techBadge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background-color: var(--vanilla-custard);
+  color: var(--deep-space-blue);
+  border: 1px solid rgba(0, 48, 73, 0.12);
+}
+
+/* Responsive Styles */
+@media (max-width: 960px) {
+  .mainShowcaseFrame {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .dialZone {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 280px;
+    border-right: none;
+    border-bottom: 2px solid rgba(0, 48, 73, 0.1);
+    justify-content: center;
+  }
+
+  .dialWheelTrack {
+    left: 50%;
+    margin-left: -220px;
+  }
+
+  .activePointer {
+    display: none;
+  }
+
+  .heroZone {
+    padding: 2rem 1.5rem;
+  }
+}

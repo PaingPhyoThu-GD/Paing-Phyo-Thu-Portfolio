@@ -9,7 +9,6 @@ function AIFooterComponent({ onNavigate }) {
   const navLinks = [
     { label: 'Home', href: '#home' },
     { label: 'About Me', href: '#about' },
-    { label: 'Purpose & Values', href: '#purpose' },
     { label: 'Projects', href: '#projects' },
     { label: 'Tech Stack', href: '#techstack' },
     { label: 'Contact', href: '#contact' }
@@ -60,7 +59,7 @@ function AIFooterComponent({ onNavigate }) {
           {/* Gmail */}
           <li>
             <a
-              href="mailto:paingphyothu.dev@gmail.com"
+              href="mailto:thupaingphyo222@gmail.com"
               className={styles.socialBtn}
               aria-label="Send Email via Gmail"
               title="Gmail"
@@ -74,7 +73,7 @@ function AIFooterComponent({ onNavigate }) {
           {/* Telegram */}
           <li>
             <a
-              href="https://t.me/PaingPhyoThu"
+              href="https://t.me/PaingPhyoThu3"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialBtn}
@@ -88,9 +87,9 @@ function AIFooterComponent({ onNavigate }) {
           </li>
 
           {/* Viber */}
-          <li>
+          {/* <li>
             <a
-              href="viber://chat?number=+959000000000"
+              href="viber://chat?number=959798000619"
               className={styles.socialBtn}
               aria-label="Contact on Viber"
               title="Viber"
@@ -99,12 +98,12 @@ function AIFooterComponent({ onNavigate }) {
                 <path d="M17.55 14.16c-.53-.35-1.25-.33-1.78.08l-.83.65c-.29.23-.68.27-1.02.1-1.32-.67-2.45-1.8-3.12-3.12-.17-.34-.13-.73.1-1.02l.65-.83c.41-.53.43-1.25.08-1.78l-1.5-2.25c-.42-.63-1.27-.82-1.92-.42L6.8 6.55c-.72.48-1.08 1.34-.89 2.18 1.07 4.75 4.81 8.49 9.56 9.56.84.19 1.7-.17 2.18-.89l1.01-1.41c.4-.65.21-1.5-.42-1.92l-2.25-1.5zM12 3C7.03 3 3 7.03 3 12c0 1.77.52 3.42 1.41 4.81L3 21l4.19-1.41C8.58 20.48 10.23 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z" />
               </svg>
             </a>
-          </li>
+          </li> */}
 
           {/* LinkedIn */}
           <li>
             <a
-              href="https://linkedin.com/in/paing-phyo-thu"
+              href="https://www.linkedin.com/in/paing-phyo-thu-347875348"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialBtn}
@@ -138,21 +137,21 @@ function AIFooterComponent({ onNavigate }) {
         <ul className={styles.contactInfoList} aria-label="Direct contact details">
           <li className={styles.contactItem}>
             <span className={styles.contactLabel}>Email:</span>
-            <a href="mailto:paingphyothu.dev@gmail.com" className={styles.contactLink}>
-              paingphyothu.dev@gmail.com
+            <a href="mailto:thupaingphyo222@gmail.com" className={styles.contactLink}>
+              thupaingphyo222@gmail.com
             </a>
           </li>
           <li className={styles.dividerDot} aria-hidden="true">•</li>
           <li className={styles.contactItem}>
             <span className={styles.contactLabel}>Telegram:</span>
-            <a href="https://t.me/PaingPhyoThu" className={styles.contactLink}>
-              @PaingPhyoThu
+            <a href="https://t.me/PaingPhyoThu3" className={styles.contactLink}>
+              @PaingPhyoThu3
             </a>
           </li>
           <li className={styles.dividerDot} aria-hidden="true">•</li>
           <li className={styles.contactItem}>
-            <span className={styles.contactLabel}>Viber:</span>
-            <span className={styles.contactLink}>Available on inquiry</span>
+            <span className={styles.contactLabel}>Ph-no:</span>
+            <span className={styles.contactLink}>+959798000619</span>
           </li>
         </ul>
 

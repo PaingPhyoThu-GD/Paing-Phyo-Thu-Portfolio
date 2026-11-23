@@ -8,7 +8,6 @@ function AINavbar({ ishome, currentActive = 'Home' }) {
   const navItems = [
     { label: 'HOME', id: 'home', isHomeTarget: true },
     { label: 'ABOUT ME', id: 'about' },
-    { label: 'PURPOSE', id: 'purpose' },
     { label: 'PROJECTS', id: 'projects' },
     { label: 'TECH STACK', id: 'techstack' },
     { label: 'CONTACT', id: 'contact' }

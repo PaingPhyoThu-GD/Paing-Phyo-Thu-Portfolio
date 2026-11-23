@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 function ProjectShowCaesSection({ishome}){
 
-    const project_list = [JobPortalProject , StudentRegisterationProject]
+    const project_list = [JobPortalProject , StudentRegisterationProject , ]
     
     const temp_pj_nav_list = project_list.map(
             (pj) => 

@@ -7,6 +7,7 @@ import AIPMVVComponent from './Components/Purpose_Mission_Vision_Vale_component/
 import AITechStackSection from './Components/Tech_stack_component/ai_tech_stack_sec'
 import AIFooterComponent from './Components/Footer/ai_footer_component'
 import AINavbar from './Components/nav_bar_component/ai_nav_bar_section'
+import ProjectShowCaesSection from './Components/Project_component/project_show_case_section'
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
               <>
                 <AIHeroSection />
                 <AIPMVVComponent />
-
+                <ProjectShowCaesSection />
                 <AITechStackSection />
               </>
             ) :

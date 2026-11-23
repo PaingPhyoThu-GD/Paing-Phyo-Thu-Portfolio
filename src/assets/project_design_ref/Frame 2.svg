@@ -1,0 +1,19 @@
+<svg width="125" height="79" viewBox="0 0 125 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2024_2)">
+<rect width="125" height="79" fill="#46AC60"/>
+<rect x="43" y="5" width="36" height="9" fill="#D9D9D9"/>
+<g clip-path="url(#clip1_2024_2)">
+<rect x="8" y="18" width="107" height="53" fill="#D9D9D9"/>
+<rect x="112.943" y="68.4582" width="82.3442" height="47.9071" rx="3" transform="rotate(-179.649 112.943 68.4582)" fill="#4039C5"/>
+<ellipse cx="14.5" cy="47" rx="33.5" ry="38" fill="#4F1313"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_2024_2">
+<rect width="125" height="79" fill="white"/>
+</clipPath>
+<clipPath id="clip1_2024_2">
+<rect width="107" height="53" fill="white" transform="translate(8 18)"/>
+</clipPath>
+</defs>
+</svg>

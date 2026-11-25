@@ -1,17 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styles from './ai_nav_bar.module.css'
 
-function AINavbar({ ishome, currentActive = 'Home' }) {
+const NAV_ITEMS = [
+  { label: 'HOME', id: 'home', isHomeTarget: true },
+  { label: 'ABOUT ME', id: 'about' },
+  { label: 'PROJECTS', id: 'projects' },
+  { label: 'TECH STACK', id: 'techstack' },
+  { label: 'CONTACT', id: 'contact' }
+]
+
+function AINavbar({ ishome, currentActive = 'HOME' }) {
   const [activeItem, setActiveItem] = useState(currentActive)
 
-  const navItems = [
-    { label: 'HOME', id: 'home', isHomeTarget: true },
-    { label: 'ABOUT ME', id: 'about' },
-    { label: 'PROJECTS', id: 'projects' },
-    { label: 'TECH STACK', id: 'techstack' },
-    { label: 'CONTACT', id: 'contact' }
-  ]
+  // Track active section on scroll so navbar pill moves dynamically as user scrolls
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollBuffer = 140
+      const scrollPos = window.pageYOffset + scrollBuffer
+
+      for (let i = NAV_ITEMS.length - 1; i >= 0; i--) {
+        const section = document.getElementById(NAV_ITEMS[i].id)
+        if (section) {
+          const top = section.offsetTop
+          if (scrollPos >= top) {
+            setActiveItem(NAV_ITEMS[i].label)
+            break
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const handleClick = (e, item) => {
     e.preventDefault()
@@ -21,11 +43,27 @@ function AINavbar({ ishome, currentActive = 'Home' }) {
       ishome(true)
     }
 
-    const targetElement = document.getElementById(item.id)
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' })
+    const scrollToSection = () => {
+      const targetElement = document.getElementById(item.id)
+      if (targetElement) {
+        const navOffset = 90
+        const elementPosition = targetElement.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - navOffset
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        })
+      } else {
+        window.location.hash = `#${item.id}`
+      }
+    }
+
+    if (typeof ishome === 'function') {
+      ishome(true)
+      setTimeout(scrollToSection, 30)
     } else {
-      window.location.hash = `#${item.id}`
+      scrollToSection()
     }
   }
 
@@ -33,8 +71,8 @@ function AINavbar({ ishome, currentActive = 'Home' }) {
     <header className={styles.navWrapper} role="banner">
       <nav aria-label="Main floating navigation">
         <ul className={styles.pillContainer}>
-          {navItems.map((item) => {
-            const isActive = activeItem.toLowerCase() === item.label.toLowerCase()
+          {NAV_ITEMS.map((item) => {
+            const isActive = activeItem.toUpperCase() === item.label.toUpperCase()
             return (
               <li key={item.id} className={styles.navItem}>
                 <button

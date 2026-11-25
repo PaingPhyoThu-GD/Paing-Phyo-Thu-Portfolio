@@ -1,4 +1,22 @@
-.app {
-    width: 100%;
-    background-color: #f2dbae;
+/* App.css */
+
+html {
+  scroll-behavior: smooth;
+}
+
+#home,
+#about,
+#projects,
+#techstack,
+#contact {
+  scroll-margin-top: 90px;
+}
+
+
+#home,
+#about,
+#projects,
+#techstack,
+#contact {
+  scroll-margin-top: 90px;
 }

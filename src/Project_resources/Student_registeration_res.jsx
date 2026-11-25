@@ -1,12 +1,12 @@
 import { Project } from "../Model Classes/project_class";
-
+import project_image_10 from "../../src/assets/Project_show_case_img/10.png"
 const name = "Student Registeration";
 const description = "Handling the new student registeration , Student data and Exam pass,fail management , Payments Handling";
 const detailDescription = "UIT SEM7 Database Project";
 const techStack = ["Springboot", "Mongodb", "Javascript", "HTML", "CSS", "React"];
 const imagesList = [];
 const role = "Front-End developer";
-const hero_image = "Paing-Phyo-Thu-Portfolio/src/assets/Project_show_case_img/10.png";
+const hero_image = project_image_10;
 
 const StudentRegisterationProject = new Project(
     name,
